@@ -1,0 +1,26 @@
+{
+  "apiPOSTRequestTemplate": {
+    "application/json": {
+      "endpoint": "$input.json('$.endpoint')"
+    }
+  },
+  "apiGETRequestTemplate": {
+    "application/json": {
+      "endpoint": "$input.params('endpoint')"
+    }
+  },
+  "apiPUTRequestTemplate": {
+    "application/json": {
+      "endpoint": "$input.params('endpoint')",
+      "rgb": "$input.json('$.rgb')"
+    }
+  },
+  "apiResponseModelsError": {
+    "application/json": "Error"
+  },
+  "apiResponseTemplateError": {
+    "application/json": {
+      "message": "$input.path('$.errorMessage')"
+    }
+  }
+}

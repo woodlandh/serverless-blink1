@@ -1,3 +1,5 @@
+_meta/
+restApi/vendored/
 # Compiled files
 *.tfstate
 *.tfstate.backup

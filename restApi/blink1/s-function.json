@@ -1,0 +1,93 @@
+{
+  "name": "blink1",
+  "runtime": "python2.7",
+  "description": "Serverless Lambda function for project: severless-blink1",
+  "customName": false,
+  "customRole": false,
+  "handler": "blink1/handler.handler",
+  "timeout": 5,
+  "memorySize": 256,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": [],
+    "envVars": []
+  },
+  "endpoints": [
+    {
+      "path": "blink1",
+      "method": "POST",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${apiPOSTRequestTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {},
+          "application/json": ""
+        }
+      }
+    },
+    {
+      "path": "blink1/{endpoint}",
+      "method": "GET",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${apiGETRequestTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {},
+          "application/json": ""
+        }
+      }
+    },
+    {
+      "path": "blink1/{endpoint}",
+      "method": "PUT",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${apiPUTRequestTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {},
+          "application/json": ""
+        }
+      }
+    }
+  ],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}
