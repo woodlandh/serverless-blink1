@@ -1,16 +1,25 @@
 {
   "apiPOSTRequestTemplate": {
     "application/json": {
+      "httpMethod": "$context.httpMethod",
       "endpoint": "$input.json('$.endpoint')"
+    }
+  },
+  "apiDELETERequestTemplate": {
+    "application/json": {
+      "httpMethod": "$context.httpMethod",
+      "endpoint": "$input.params('endpoint')"
     }
   },
   "apiGETRequestTemplate": {
     "application/json": {
+      "httpMethod": "$context.httpMethod",
       "endpoint": "$input.params('endpoint')"
     }
   },
   "apiPUTRequestTemplate": {
     "application/json": {
+      "httpMethod": "$context.httpMethod",
       "endpoint": "$input.params('endpoint')",
       "rgb": "$input.json('$.rgb')"
     }

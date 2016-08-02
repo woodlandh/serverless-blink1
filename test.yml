@@ -1,0 +1,68 @@
+---
+- config:
+    - testset: "pyresttest tests against dev"
+
+- test:
+    - group: "default"
+    - name: "create new endpoint pyresttest"
+    - url: "/dev/blink1"
+    - method: "POST"
+    - body: '{"endpoint": "pyresttest"}'
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: 'pyresttest' }
+
+- test:
+    - group: "default"
+    - name: "fetch rgb from pyresttest"
+    - url: "/dev/blink1/pyresttest"
+    - method: "GET"
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: '#000000' }
+
+- test:
+    - group: "default"
+    - name: "update rgb in pyresttest"
+    - url: "/dev/blink1/pyresttest"
+    - method: "PUT"
+    - body: '{"rgb": "#FFFFFF"}'
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: '#FFFFFF' }
+
+- test:
+    - group: "default"
+    - name: "fetch rgb from pyresttest"
+    - url: "/dev/blink1/pyresttest"
+    - method: "GET"
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: '#FFFFFF' }
+
+- test:
+    - group: "default"
+    - name: "delete pyresttest"
+    - url: "/dev/blink1/pyresttest"
+    - method: "DELETE"
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: 'pyresttest' }
+
+- test:
+    - group: "default"
+    - name: "expected failure to delete nonexistent endpoint"
+    - url: "/dev/blink1/fakepyresttest1923091823"
+    - method: "DELETE"
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: 'ERROR: no data, endpoint did not exist' }
+- test:
+    - group: "default"
+    - name: "expected failure to fetch deleted endpoint"
+    - url: "/dev/blink1/pyresttest"
+    - method: "GET"
+    - headers: {'Content-Type': 'application/json'}
+    - validators:
+        - compare: { raw_body: "", comparator: contains, expected: 'ERROR: no endpoint in database' }
+

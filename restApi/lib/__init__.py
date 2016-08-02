@@ -17,5 +17,4 @@ for d, dirs, files in os.walk(LIBS_PATH):
 
 
 # expose libraries in module scope
-#from newgame import NewGame
-#from turn import Turn
+from dynamo import dynamoRead, dynamoCreate, dynamoUpdate, dynamoDelete
