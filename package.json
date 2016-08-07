@@ -1,13 +1,20 @@
 {
   "name": "serverless-blink1",
-  "version": "0.0.1",
-  "description": "A Serverless Project and its Serverless Plugin dependencies.",
-  "author": "me",
+  "version": "0.1.0",
+  "description": "A serverless endpoint to push and fetch blink(1) LED color codes.",
+  "author": {
+    "name": "Woodland Hunter"
+  },
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/"
+    "url": "git+https://github.com/woodlandh/serverless-blink1.git"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/woodlandh/serverless-blink1/issues"
+  },
+  "homepage": "https://github.com/woodlandh/serverless-blink1#readme",
+  "scripts": {}
 }

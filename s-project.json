@@ -1,5 +1,10 @@
 {
   "name": "serverless-blink1",
   "custom": {},
-  "plugins": []
+  "plugins": [],
+  "version": "0.1.0",
+  "profile": "serverless-v0.5.0",
+  "location": "https://github.com/woodlandh/serverless-blink1",
+  "author": "Woodland Hunter",
+  "description": "A serverless endpoint to push and fetch blink(1) LED color codes."
 }
